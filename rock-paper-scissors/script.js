@@ -15,35 +15,44 @@ function getHumanChoice() {
 }
 
 
-
-function playGame() {
-    function playRound(humanChoice, computerChoice) {
-        if (humanChoice.toLowerCase() === computerChoice) {
-            console.log("It's a tie! Computer chose " + computerChoice);
-            return;
-        } else if ((humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") ||
-                    (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") ||
-                    (humanChoice.toLowerCase() === "scissors" && computerChoice === "paper")) {
-            humanScore++;
-            console.log("Computer chose " + computerChoice + ", you win!");
-        } else {
-            computerScore++;
-            console.log("You lose! Computer chose " + computerChoice);
-        }
-    }
-
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        console.log("Human: " + humanScore + ", Computer: " + computerScore);
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice.toLowerCase() === computerChoice) {
+        console.log("It's a tie! Computer chose " + computerChoice);
+        return;
+    } else if ((humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") ||
+        (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") ||
+        (humanChoice.toLowerCase() === "scissors" && computerChoice === "paper")) {
+        humanScore++;
+        console.log("Computer chose " + computerChoice + ", you win!");
+    } else {
+        computerScore++;
+        console.log("You lose! Computer chose " + computerChoice);
     }
 }
 
-// console.log(getComputerChoice());
-playGame();
-if (humanScore - computerScore > 2) {
-    console.log("Congrats! You won best of 5");
-} else if (humanScore == computerScore) {
-    console.log("Tie! Try again");
-}
+
+const buttonRock = document.createElement("button");
+buttonRock.textContent = "Rock";
+document.body.appendChild(buttonRock);
+
+const buttonPaper = document.createElement("button");
+buttonPaper.textContent = "Paper";
+document.body.appendChild(buttonPaper);
+
+const buttonScissors = document.createElement("button");
+buttonScissors.textContent = "Scissors";
+document.body.appendChild(buttonScissors);
+
+buttonRock.addEventListener("click", () => {
+    playRound("Rock", getComputerChoice());
+});
+
+buttonPaper.addEventListener("click", () => {
+    playRound("Paper", getComputerChoice());
+});
+
+buttonScissors.addEventListener("click", () => {
+    playRound("Scissors", getComputerChoice());
+});
+
+
