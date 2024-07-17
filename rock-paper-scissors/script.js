@@ -1,6 +1,9 @@
 const gameChoices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
+const displayResults = document.querySelector("displayResults");
+// document.body.appendChild(displayResults);
+
 
 function getComputerChoice() {
     return gameChoices[Math.floor(3 * Math.random())];
@@ -17,16 +20,16 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice.toLowerCase() === computerChoice) {
-        console.log("It's a tie! Computer chose " + computerChoice);
+        displayResults.textContent = "It's a tie!";
         return;
     } else if ((humanChoice.toLowerCase() === "rock" && computerChoice === "scissors") ||
         (humanChoice.toLowerCase() === "paper" && computerChoice === "rock") ||
         (humanChoice.toLowerCase() === "scissors" && computerChoice === "paper")) {
         humanScore++;
-        console.log("Computer chose " + computerChoice + ", you win!");
+        displayResults.textContent = "Computer chose " + computerChoice + ", you win!"; 
     } else {
         computerScore++;
-        console.log("You lose! Computer chose " + computerChoice);
+        displayResults.textContent = "You lose! Computer chose " + computerChoice;
     }
 }
 
@@ -54,5 +57,6 @@ buttonPaper.addEventListener("click", () => {
 buttonScissors.addEventListener("click", () => {
     playRound("Scissors", getComputerChoice());
 });
+
 
 
