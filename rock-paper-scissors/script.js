@@ -3,13 +3,13 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    return gameChoices[Math.floor(Math.random() * (3 + 0) - 0)];
+    return gameChoices[Math.floor(3 * Math.random())];
 }
 
 function getHumanChoice() {
     let humanInput = prompt("Choose rock, paper, or scissors");
     if (gameChoices.includes(humanInput.toLowerCase())) {
-        return humanInput;
+        return humanInput.toLowerCase();
     }
     return console.log("You didn't choose rock, paper, or scissors");
 }
