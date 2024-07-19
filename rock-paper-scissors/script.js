@@ -51,7 +51,9 @@ function playRound(humanChoice, computerChoice) {
     }
     if (humanScore === 5) {
         displayResults.textContent = "CONGRATS! You win! You reached 5 points first.";
+        return;
     } else if (computerScore === 5) {
         displayResults.textContent = "BOO! Better luck next time. You lose. Computer reached 5 points first";
+        return;
     }
 }
