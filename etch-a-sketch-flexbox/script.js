@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 
-let gridSize = 4;
+let gridSize = parseInt(prompt("Enter a grid size greater than 1 and less than 100"));
 
 let cellSize = 500 / gridSize;
 
@@ -16,4 +16,10 @@ function createGrid(gridSize) {
     }
 }
 
-createGrid(4);
+if (gridSize > 1 && gridSize < 100) {
+    createGrid(gridSize);
+} else if (gridSize < 1) {
+    parseInt(prompt("Please enter a number greater than 1"));
+}
+
+
