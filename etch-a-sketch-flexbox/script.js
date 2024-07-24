@@ -22,4 +22,14 @@ if (gridSize > 1 && gridSize < 100) {
     parseInt(prompt("Please enter a number greater than 1"));
 }
 
+function colorize() {
+    let r = (Math.floor(Math.random() * 256));
+    let g = (Math.floor(Math.random() * 256));
+    let b = (Math.floor(Math.random() * 256));
+
+    container.forEach((node) => {
+        node.style.backgroundColor(`rgb(${r}, ${g}, ${b})`);
+    })
+}
+
 
