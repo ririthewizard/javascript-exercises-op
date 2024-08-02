@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 
-let gridSize = parseInt(prompt("Enter a grid size greater than 1 and less than 100"));
+let gridSize = 8; //parseInt(prompt("Enter a grid size greater than 1 and less than 100"));
 
 let cellSize = 500 / gridSize;
 
@@ -23,13 +23,19 @@ if (gridSize > 1 && gridSize < 100) {
 }
 
 function colorize() {
-    let r = (Math.floor(Math.random() * 256));
-    let g = (Math.floor(Math.random() * 256));
-    let b = (Math.floor(Math.random() * 256));
+    let children = container.children;
+    for (let i = 0; i < children.length; ++i) {
+        let cellChild = children[i];
 
-    container.forEach((node) => {
-        node.style.backgroundColor(`rgb(${r}, ${g}, ${b})`);
-    })
+        let r = (Math.floor(Math.random() * 256));
+        let g = (Math.floor(Math.random() * 256));
+        let b = (Math.floor(Math.random() * 256));
+
+        cellChild.style.backgroundColor = (`rgb(${r}, ${g}, ${b})`);
+    }
 }
+
+colorize();
+
 
 
