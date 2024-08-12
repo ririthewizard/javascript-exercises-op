@@ -22,7 +22,7 @@ if (gridSize > 1 && gridSize < 100) {
     parseInt(prompt("Please enter a number greater than 1"));
 }
 
-function colorize() {
+/* function colorize() {
     let children = container.children;
     for (let i = 0; i < children.length; ++i) {
         let cellChild = children[i];
@@ -33,9 +33,23 @@ function colorize() {
 
         cellChild.style.backgroundColor = (`rgb(${r}, ${g}, ${b})`);
     }
-}
+} */
 
-colorize();
+
+
+// colorize();
+
+container.addEventListener("mouseover", function(e) {
+    const target = e.target.closest(".cell");
+
+    if (target) {
+        let r = (Math.floor(Math.random() * 256));
+        let g = (Math.floor(Math.random() * 256));
+        let b = (Math.floor(Math.random() * 256));
+
+        target.style.backgroundColor = (`rgb(${r}, ${g}, ${b})`);
+    }
+})
 
 
 
