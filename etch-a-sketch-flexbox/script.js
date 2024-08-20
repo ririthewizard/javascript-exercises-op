@@ -1,6 +1,10 @@
 const container = document.querySelector(".container");
 
-let gridSize = 12 //parseInt(prompt("Enter a grid size greater than 1 and less than 100"));
+
+let gridSize = document.querySelector("#Grid").addEventListener("click", () => {
+    let userInput = prompt("Enter a grid size greater than 1 and less than 100");
+    alert(userInput);
+});
 
 let cellSize = 960 / gridSize;
 
@@ -22,7 +26,7 @@ if (gridSize > 1 && gridSize < 100) {
     parseInt(prompt("Please enter a number greater than 1"));
 }
 
-container.addEventListener("mouseover", function(e) {
+container.addEventListener("mouseover", function (e) {
     const target = e.target.closest(".cell");
 
     if (target) {
