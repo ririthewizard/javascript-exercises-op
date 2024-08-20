@@ -1,8 +1,8 @@
 const container = document.querySelector(".container");
 
-let gridSize = 8; //parseInt(prompt("Enter a grid size greater than 1 and less than 100"));
+let gridSize = 12 //parseInt(prompt("Enter a grid size greater than 1 and less than 100"));
 
-let cellSize = 500 / gridSize;
+let cellSize = 960 / gridSize;
 
 function createGrid(gridSize) {
     for (let i = 0; i < gridSize * gridSize; i++) {

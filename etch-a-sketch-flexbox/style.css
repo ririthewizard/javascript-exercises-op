@@ -4,8 +4,8 @@
 
 .container {
     margin: 0 auto;
-    width: 500px;
-    height: 500px;
+    width: 960px;
+    height: 960px;
     display: flex;
     flex-shrink: 0;
     flex-wrap: wrap;
