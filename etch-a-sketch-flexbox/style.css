@@ -1,0 +1,17 @@
+* {
+    /* outline: 2px solid red; */
+}
+
+.container {
+    margin: 0 auto;
+    width: 960px;
+    height: 960px;
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.cell {
+    box-sizing: border-box;
+}
+
