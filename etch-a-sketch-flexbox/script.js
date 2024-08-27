@@ -1,14 +1,9 @@
 const container = document.querySelector(".container");
 
-
-let gridSize = document.querySelector("#Grid").addEventListener("click", () => {
-    let userInput = prompt("Enter a grid size greater than 1 and less than 100");
-    alert(userInput);
-});
-
-let cellSize = 960 / gridSize;
-
-function createGrid(gridSize) {
+function createGrid(gridSize, cellSize) {
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
     for (let i = 0; i < gridSize * gridSize; i++) {
         let cell = document.createElement("div");
         cell.classList.add("cell");
@@ -20,11 +15,16 @@ function createGrid(gridSize) {
     }
 }
 
-if (gridSize > 1 && gridSize < 100) {
-    createGrid(gridSize);
-} else if (gridSize < 1) {
-    parseInt(prompt("Please enter a number greater than 1"));
-}
+let changeGrid = document.querySelector("#Grid").addEventListener("click", () => {
+    let userInput = prompt("Enter a grid size greater than 1 and less than 100");
+    let cellNum = 960 / userInput;
+    if (userInput > 1 && userInput < 100) {
+        createGrid(userInput, cellNum);
+    } else if (userInput < 1) {
+        parseInt(prompt("Please enter a number greater than 1"));
+    }
+});
+
 
 container.addEventListener("mouseover", function (e) {
     const target = e.target.closest(".cell");
