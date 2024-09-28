@@ -8,6 +8,14 @@ html {
     letter-spacing: 1px;
     font-size: 0.8rem;
   }
+
+  tbody {
+    font-size: 95%;
+  }
+
+  tfoot {
+    font-weight: bold;
+  }
   
   td, th {
     border: 1px solid rgb(190,190,190);
